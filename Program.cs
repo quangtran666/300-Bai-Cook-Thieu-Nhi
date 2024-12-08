@@ -4,35 +4,16 @@ var result = IsAnagram(s, t);
 Console.WriteLine(result);
 
 bool IsAnagram(string s, string t) {
-    if (s.Length != t.Length) return false;
-
-    var sHashtable = new Dictionary<char, int>();
-    var tHashtable = new Dictionary<char, int>();
-
-    foreach (var character in s)  {
-        if (sHashtable.TryGetValue(character, out var actualValue)) {
-            sHashtable[character] = actualValue + 1;
-            continue;
-        }
-        sHashtable.Add(character, 1);
+    if (s.Length != t.Length) {
+            return false;
     }
 
-    foreach (var character in t)  {
-        if (tHashtable.TryGetValue(character, out var actualValue)) {
-            tHashtable[character] = actualValue + 1;
-            continue;
-        }
-        tHashtable.Add(character, 1);
+    Dictionary<char, int> countS = new Dictionary<char, int>();
+    Dictionary<char, int> countT = new Dictionary<char, int>();
+    for (int i = 0; i < s.Length; i++) {
+        countS[s[i]] = countS.GetValueOrDefault(s[i], 0) + 1;
+        countT[t[i]] = countT.GetValueOrDefault(t[i], 0) + 1;
     }
-
-    Console.WriteLine(sHashtable['a']);
-    Console.WriteLine(tHashtable['a']);
-
-    foreach (var key in sHashtable.Keys) {
-        if (sHashtable.TryGetValue(key, out var _) && tHashtable.TryGetValue(key, out var _) && sHashtable[key] == tHashtable[key])
-            continue;
-        return false;    
-    }
-
-    return true;
+    
+    return countS.Count == countT.Count && !countS.Except(countT).Any();
 }
