@@ -7,19 +7,14 @@ Console.WriteLine(result);
 
 bool IsPalindrome(string s)
 {
-    var cleanString = CleanString(s);
-
-    for (var i = 0; i < cleanString.Length; i++)
+    var newString = "";
+    foreach (var @char in s)
     {
-        if (cleanString[i] == cleanString[cleanString.Length - 1 - i])
-            continue;
-        return false;
+        if (char.IsLetterOrDigit(@char))
+        {
+            newString += char.ToLower(@char);
+        }
     }
-
-    return true;
-}
-
-string CleanString(string s)
-{
-    return Regex.Replace(s.ToLower(), "[^a-zA-Z0-9]", "");
+    
+    return newString == new string(newString.Reverse().ToArray());
 }
