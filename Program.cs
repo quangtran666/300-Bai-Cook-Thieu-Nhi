@@ -17,70 +17,30 @@ Console.WriteLine(result);
 
 bool IsValidSudoku(char[][] board)
 {
-    var dictRow = new Dictionary<int, HashSet<char>>();
-    var dictCol = new Dictionary<int, HashSet<char>>();
-    var dictBox = new Dictionary<int, HashSet<char>>();
-    
-    for (var horizontal = 0; horizontal < board.Length; horizontal++)
+    var rows = new Dictionary<int, HashSet<int>>();
+    var cols = new Dictionary<int, HashSet<int>>();
+    var boxes = new Dictionary<string, HashSet<int>>();
+
+    for (var r = 0; r < 9; r++)
     {
-        dictRow[horizontal] = [];
-        for (var vertical = 0; vertical < board[horizontal].Length; vertical++)
+        for (var c = 0; c < 9; c++)
         {
-            if (!dictCol.ContainsKey(vertical))
-            {
-                dictCol[vertical] = [];
-            }
+            if (board[r][c] == '.') continue;
+
+            var boxesKey = (r / 3) + "," + (c / 3);
+
+            if (rows.ContainsKey(r) && rows[r].Contains(board[r][c]) ||
+                cols.ContainsKey(c) && cols[c].Contains(board[r][c]) ||
+                boxes.ContainsKey(boxesKey) && boxes[boxesKey].Contains(board[r][c]))
+                return false;
+
+            if (!rows.ContainsKey(r)) rows[r] = [];
+            if (!cols.ContainsKey(c)) cols[c] = [];
+            if (!boxes.ContainsKey(boxesKey)) boxes[boxesKey] = [];
             
-            if (board[horizontal][vertical] == '.') continue;
-
-            if (dictRow[horizontal].Contains(board[horizontal][vertical]))
-                return false;
-            dictRow[horizontal].Add(board[horizontal][vertical]);
-
-            if (dictCol[vertical].Contains(board[horizontal][vertical]))
-                return false;
-            dictCol[vertical].Add(board[horizontal][vertical]);
-        }
-    }
-
-    int verticalStart = 0;
-    int horizontalStart;
-    int currentBox = 0;
-    dictBox[currentBox] = [];
-    
-    for (horizontalStart = 0; horizontalStart < board.Length; )
-    {
-        int maxVerticalStart = verticalStart + 3;
-        while (verticalStart < maxVerticalStart)
-        {
-            if (board[horizontalStart][verticalStart] == '.')
-            {
-                verticalStart++;
-                continue;
-            }
-            
-            if (dictBox[currentBox].Contains(board[horizontalStart][verticalStart]))
-                return false;
-            dictBox[currentBox].Add(board[horizontalStart][verticalStart]);
-            verticalStart++;
-        }
-
-        horizontalStart++;
-        
-        if (horizontalStart == 9 && verticalStart == 9) 
-                    break;
-        if (horizontalStart % 3 == 0 && verticalStart == maxVerticalStart && horizontalStart != 0)
-        {
-            currentBox++;
-            dictBox[currentBox] = [];
-        }
-        
-        verticalStart = maxVerticalStart - 3;
-        
-        if (horizontalStart == 9)
-        {
-            verticalStart = maxVerticalStart;
-            horizontalStart = 0;
+            rows[r].Add(board[r][c]);
+            cols[c].Add(board[r][c]);
+            boxes[boxesKey].Add(board[r][c]);
         }
     }
 
