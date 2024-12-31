@@ -5,38 +5,32 @@ Console.WriteLine(result);
 
 int Trap(int[] height)
 {
-    var maxLeft = new int[height.Length];
-    var maxRight = new int[height.Length];
-    var totalTrapWater = 0;
-    
-    maxLeft[0] = 0;
-    maxRight[height.Length - 1] = 0;
-
-    for (var i = 1; i < height.Length; i++)
+    int n = height.Length;
+    if (n == 0)
     {
-        var maxLeftHeight = 0;
-        for (var j = i - 1; j >= 0; j--)
-        {
-            maxLeftHeight = Math.Max(maxLeftHeight, height[j]);
-        }
-        maxLeft[i] = maxLeftHeight;
+        return 0;
     }
 
-    for (var i = height.Length - 2; i >= 0; i--)
+    int[] leftMax = new int[n];
+    int[] rightMax = new int[n];
+
+    leftMax[0] = height[0];
+    for (int i = 1; i < n; i++)
     {
-        var maxRightHeight = 0;
-        for (var j = i + 1; j < height.Length; j++)
-        {
-            maxRightHeight = Math.Max(maxRightHeight, height[j]);
-        }
-        maxRight[i] = maxRightHeight;
+        leftMax[i] = Math.Max(leftMax[i - 1], height[i]);
     }
 
-    for (var i = 1; i < height.Length - 1; i++)
+    rightMax[n - 1] = height[n - 1];
+    for (int i = n - 2; i >= 0; i--)
     {
-        var trapWater = Math.Min(maxLeft[i], maxRight[i]) - height[i];
-        totalTrapWater += Math.Max(trapWater, 0);
+        rightMax[i] = Math.Max(rightMax[i + 1], height[i]);
     }
 
-    return totalTrapWater;
+    int res = 0;
+    for (int i = 0; i < n; i++)
+    {
+        res += Math.Min(leftMax[i], rightMax[i]) - height[i];
+    }
+
+    return res;
 }
