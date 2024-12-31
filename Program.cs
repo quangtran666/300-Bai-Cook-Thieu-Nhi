@@ -11,7 +11,6 @@ int MaxProfit(int[] prices)
         if (prices[i] < prices[start])
         {
             start = i;
-            end = i;
         }
 
         end = i;
