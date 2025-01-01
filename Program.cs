@@ -8,27 +8,23 @@ int CharacterReplacement(string s, int k)
 {
     var characterCount = new Dictionary<char, int>();
     var start = 0;
-    var end = 0;
     var max = 0;
+    var maxFreq = 0;
 
-    for (end = 0; end < s.Length; end++)
+    for (var end = 0; end < s.Length; end++)
     {
         characterCount[s[end]] = characterCount.GetValueOrDefault(s[end], 0) + 1;
 
-        var characterMostFrequent = characterCount.Values.Max();
+        maxFreq = Math.Max(maxFreq, characterCount[s[end]]);
 
-        if (end - start + 1 - characterMostFrequent <= k)
+        while (end - start + 1 - maxFreq > k)
         {
-            max = Math.Max(max, end - start + 1);
+            characterCount[s[start]]--;
+            start++;
+
         }
-        else
-        {
-            while (end - start + 1 - characterMostFrequent > k)
-            {
-                characterCount[s[start]]--;
-                start++;
-            }
-        }
+
+        max = Math.Max(max, end - start + 1);
     }
 
     return max;
