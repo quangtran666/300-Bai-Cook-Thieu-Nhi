@@ -10,16 +10,23 @@ bool CheckInclusion(string s1, string s2)
         .GroupBy(x => x)
         .ToDictionary(x => x.Key, x => x.ToList().Count);
 
-    for (var i = 0; i < s2.Length - s1.Length; i++)
+    var count = s1Dict.Keys.Count;
+    
+    for (var i = 0; i < s2.Length - s1.Length + 1; i++)
     {
         var s2SubDict = new Dictionary<char, int>();
+
+        var compare = 0;
 
         for (var j = i; j < i + s1.Length; j++)
         {
             s2SubDict[s2[j]] = s2SubDict.GetValueOrDefault(s2[j], 0) + 1;
+
+            if (s1Dict.ContainsKey(s2[j]) && s2SubDict[s2[j]] == s1Dict[s2[j]])
+                compare++;
         }
 
-        if (s1Dict.OrderBy(x => x.Key).SequenceEqual(s2SubDict.OrderBy(x => x.Key)))
+        if (count == compare)
             return true;
     }
 
