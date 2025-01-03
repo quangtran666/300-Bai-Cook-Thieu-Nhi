@@ -29,7 +29,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.Console.executor": "Debug",
+    ".NET Project.Console.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
@@ -72,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735832568970</updated>
       <workItem from="1735832571808" duration="5620000" />
-      <workItem from="1735915871863" duration="3157000" />
+      <workItem from="1735915871863" duration="3894000" />
     </task>
     <servers />
   </component>
@@ -80,23 +80,4 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>39</line>
-          <properties documentPath="C:\Playground\C#\Console\Program.cs" containingFunctionPresentation="Local function 'MinWindow'">
-            <startOffsets>
-              <option value="878" />
-            </startOffsets>
-            <endOffsets>
-              <option value="955" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>

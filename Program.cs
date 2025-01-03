@@ -7,11 +7,12 @@ Console.WriteLine(result);
 
 string MinWindow(string s, string t)
 {
-    var tDict = t
+    var tDict =t
         .GroupBy(x => x)
         .ToDictionary(x => x.Key, x => x.ToList().Count);
 
-    List<LeftRightResult> res = [];
+    int[] res = [-1, -1];
+    var maxValue = int.MaxValue;
     
     for (var i = 0; i < s.Length; i++)
     {
@@ -31,32 +32,15 @@ string MinWindow(string s, string t)
                 }
             }
 
-            if (flag)
+            if (flag && (j - i + 1) < maxValue)
             {
-                res.Add(new LeftRightResult {left = i, right = j});
+                maxValue = j - i + 1;
+                res[0] = i;
+                res[1] = j;
             }
         }
     }
 
-    if (res.Count == 0) return "";
-    
-    var leftRight = res
-        .OrderBy(x => x.right - x.left)
-        .First();
-
-    var result = "";
-
-    for (var i = leftRight.left; i <= leftRight.right; i++)
-    {
-        result += s[i];
-    }
-
-    return result;
+    return maxValue == int.MaxValue ? "" : s.Substring(res[0], maxValue);
 }
 
-
-struct LeftRightResult
-{
-    public int left;
-    public int right;
-}
