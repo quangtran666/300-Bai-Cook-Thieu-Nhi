@@ -8,6 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc44a653-c6b6-4605-aca6-e17346609e5a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Console/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Console/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Console/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Console/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" afterDir="false" />
@@ -32,6 +41,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/962d21402fdb4c25841e59b220b289a23f928/9f/6f89a79a/Stack`1.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
@@ -42,7 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.Unnamed.executor": "Debug",
+    ".NET Project.Unnamed.executor": "Run",
     "git-widget-placeholder": "Bai-1544/Make-The-String-Greet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -80,24 +92,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>9</line>
-          <properties documentPath="C:\Playground\C#\Console\Program.cs" containingFunctionPresentation="Local function 'MakeGood'">
-            <startOffsets>
-              <option value="167" />
-            </startOffsets>
-            <endOffsets>
-              <option value="168" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -18,5 +18,8 @@ string MakeGood(string s)
         }
     }
 
-    return string.Concat(goodStringStack.Select(x => x)).Reverse().ToString();
+    var resultChars = goodStringStack.ToArray();
+    Array.Reverse(resultChars);
+        
+    return new string(resultChars);
 }
