@@ -8,15 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc44a653-c6b6-4605-aca6-e17346609e5a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Console/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Console/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/Console.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/Console.dll" afterDir="false" />
@@ -98,7 +99,7 @@
       <workItem from="1736248008978" duration="6590000" />
       <workItem from="1736318019104" duration="3023000" />
       <workItem from="1736322376168" duration="1836000" />
-      <workItem from="1736418703907" duration="555000" />
+      <workItem from="1736418703907" duration="1358000" />
     </task>
     <servers />
   </component>
@@ -113,18 +114,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <condition expression="speed == 29" language="C#" />
           <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>15</line>
+          <line>17</line>
           <properties documentPath="C:\Playground\C#\Console\Program.cs" containingFunctionPresentation="Local function 'MinEatingSpeed'">
             <startOffsets>
-              <option value="334" />
+              <option value="359" />
             </startOffsets>
             <endOffsets>
-              <option value="335" />
+              <option value="360" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
