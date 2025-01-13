@@ -4,16 +4,25 @@ const int target = 2;
 
 Console.WriteLine(CountPairs(nums, target));
 
-int CountPairs(IList<int> nums, int target) {
+int CountPairs(IList<int> nums, int target)
+{
+    var numsSort = nums.OrderBy(x => x).ToList();
+    var left = 0;
+    var right = nums.Count - 1;
     var count = 0;
-    
-    for (var x = 0; x < nums.Count; x++) {
-        for (var y = x + 1; y < nums.Count; y++)
+
+    while (left < right)
+    {
+        if (numsSort[left] + numsSort[right] < target)
         {
-            if (x < y && (nums[x] + nums[y] < target))
-                count++;
+            count += right - left;
+            left++;
+        }
+        else
+        {
+            right--;
         }
     }
-    
+
     return count;
 }
