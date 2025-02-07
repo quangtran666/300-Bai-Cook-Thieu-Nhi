@@ -9,32 +9,14 @@ string[] FindWords(string[] words)
     var hashset3 = new HashSet<char>("zxcvbnm");
     var result = new List<string>();
 
-    for (int i = 0; i < words.Length; i++)
+    foreach (var word in words)
     {
-        var init = 0;
-        var check = 0;
-        var indicator = true;
+        var subhashset = new HashSet<char>(word.ToLower());
         
-        if (hashset1.Contains(words[i].ToLower()[0])) init = 1;
-        else if (hashset2.Contains(words[i].ToLower()[0])) init = 2;
-        else if (hashset3.Contains(words[i].ToLower()[0])) init = 3;
-
-        for (var j = 1; j < words[i].Length; j++)
+        if (subhashset.IsSubsetOf(hashset1) || subhashset.IsSubsetOf(hashset2) || subhashset.IsSubsetOf(hashset3))
         {
-            if (hashset1.Contains(words[i].ToLower()[j])) check = 1;
-            else if (hashset2.Contains(words[i].ToLower()[j])) check = 2;
-            else if (hashset3.Contains(words[i].ToLower()[j])) check = 3;
-            
-            if (init != check)
-            {
-                indicator = false;
-                break;
-            }
-
-            indicator = true;
+            result.Add(word);
         }
-        
-        if (indicator) result.Add(words[i]);
     }
     
     return result.ToArray();

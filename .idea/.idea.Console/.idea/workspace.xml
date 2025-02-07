@@ -9,17 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9508066c-c6c8-46a1-8162-b99560324d12" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Console.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Console.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Console.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Console.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/Console.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/Console.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +77,7 @@
       <workItem from="1737962399930" duration="85000" />
       <workItem from="1738807329984" duration="461000" />
       <workItem from="1738837611474" duration="1961000" />
-      <workItem from="1738933559027" duration="2137000" />
+      <workItem from="1738933559027" duration="2455000" />
     </task>
     <servers />
   </component>
