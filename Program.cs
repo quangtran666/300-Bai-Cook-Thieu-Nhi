@@ -1,12 +1,16 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var nums = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+Console.WriteLine(string.Join(", ", FindDisappearedNumbers(nums)));
 
-int[] Intersection(int[] nums1, int[] nums2)
-{
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+IList<int> FindDisappearedNumbers(int[] nums) {
+    var hashset = new HashSet<int>(nums);
+    var list = new List<int>();
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (int i = 1; i <= nums.Length; i++)
+    {
+        if (!hashset.Contains(i))
+            list.Add(i);
+    }
+
+    return list;
 }
