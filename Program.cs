@@ -1,12 +1,21 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var word1 = "ab";
+var word2 = "pqrs";
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+Console.WriteLine(MergeAlternately(word1, word2));
 
-int[] Intersection(int[] nums1, int[] nums2)
+string MergeAlternately(string word1, string word2)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    var result = "";
+    var i = 0;
+    var j = 0;
 
-    return hashset1.Intersect(hashset2).ToArray();
+    while (i < word1.Length || j < word2.Length)
+    {
+        result += i < word1.Length ? word1[i] : "";
+        result += j < word2.Length ? word2[j] : "";
+        i++;
+        j++;
+    }
+    
+    return result;
 }
