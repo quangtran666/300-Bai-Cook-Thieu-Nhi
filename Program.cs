@@ -1,12 +1,17 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var nums1 = new int[] { 4,5,6,0,0,0 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var nums2 = new int[] { 1, 2, 3 };
 
-int[] Intersection(int[] nums1, int[] nums2)
+Merge(nums1, 3, nums2, 3);
+
+Console.WriteLine(string.Join(", ", nums1));
+
+void Merge(int[] nums1, int m, int[] nums2, int n)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
-
-    return hashset1.Intersect(hashset2).ToArray();
+    for (int i = 0; i < n; i++)
+    {
+        nums1[m + i] = nums2[i];
+    }
+    
+    Array.Sort(nums1);
 }
