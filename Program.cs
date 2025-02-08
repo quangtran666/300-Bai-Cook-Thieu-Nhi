@@ -1,30 +1,28 @@
-﻿var nums1 = new int[] { 0 };
+﻿var nums = new int[] { 0,0,1,1,1,2,2,3,3,4 };
 
-var nums2 = new int[] { 1 };
+var result = RemoveDuplicates(nums);
 
-Merge(nums1, 0, nums2, 1);
+Console.WriteLine(result);
+Console.WriteLine(string.Join(", ", nums));
 
-Console.WriteLine(string.Join(", ", nums1));
-
-void Merge(int[] nums1, int m, int[] nums2, int n)
+int RemoveDuplicates(int[] nums)
 {
-    var i = m - 1;
-    var j = n - 1;
-    var k = m + n - 1;
+    var left = 0;
+    var count = 1;
 
-    while (j >= 0)
+    for (var i = 1; i < nums.Length; i++)
     {
-        if (i >= 0 && nums1[i] > nums2[j])
+        if (nums[i] == nums[left])
         {
-            nums1[k] = nums1[j];
-            i--;
+            continue;
         }
         else
         {
-            nums1[k] = nums2[j];
-            j--;
+            nums[left + 1] = nums[i];
+            count++;
+            left++;
         }
-        
-        k--;
     }
+    
+    return count;
 }
