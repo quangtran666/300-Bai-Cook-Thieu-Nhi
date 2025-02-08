@@ -1,12 +1,17 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var s = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+ReverseString(s);
 
-int[] Intersection(int[] nums1, int[] nums2)
-{
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+Console.WriteLine(s);
 
-    return hashset1.Intersect(hashset2).ToArray();
+void ReverseString(char[] s) {
+    var left = 0;
+    var right = s.Length - 1;
+
+    while (left < right)
+    {
+        (s[left], s[right]) = (s[right], s[left]);
+        left++;
+        right--;
+    }
 }
