@@ -1,12 +1,32 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var haystack = "sadbutsad";
+var needle = "sad";
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var result = StrStr(haystack, needle);
 
-int[] Intersection(int[] nums1, int[] nums2)
-{
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+Console.WriteLine(result);
 
-    return hashset1.Intersect(hashset2).ToArray();
+int StrStr(string haystack, string needle) {
+    var pointer = 0;
+    var result = -1;
+
+    for (var i = 0; i < haystack.Length; i++)
+    {
+        var pointer2 = i;
+
+        while (pointer2 < haystack.Length && pointer < needle.Length && haystack[pointer2] == needle[pointer])
+        {
+            pointer++;
+            pointer2++;
+        }
+
+        if (pointer == needle.Length)
+        {
+            result = i;
+            break;
+        }
+        
+        pointer = 0;
+    }
+    
+    return result;
 }
