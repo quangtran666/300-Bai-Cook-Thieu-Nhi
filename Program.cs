@@ -1,12 +1,22 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var nums = new int[] { 3,2,2,3 };
+Console.WriteLine(RemoveElement(nums, 2));
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+Console.WriteLine(string.Join(", ", nums));
 
-int[] Intersection(int[] nums1, int[] nums2)
+int RemoveElement(int[] nums, int val)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    var pointer = 0;
+    var result = 0;
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 0; i < nums.Length; i++)
+    {
+        if (nums[i] != val)
+        {
+            result++;
+            nums[pointer] = nums[i];
+            pointer++;
+        }
+    }
+    
+    return result;
 }
