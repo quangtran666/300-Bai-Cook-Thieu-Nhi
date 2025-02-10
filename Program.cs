@@ -1,12 +1,26 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var nums = new int[] {1,12,-5,-6,50,3 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var k = 4;
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(FindMaxAverage(nums, k));
+
+double FindMaxAverage(int[] nums, int k)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    var average = double.MinValue;
+    var left = 0;
+    var total = 0;
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 0; i < nums.Length; i++)
+    {
+        total += nums[i];
+        if (i - left + 1 < k)
+        {
+            continue;
+        };
+        average = Math.Max(average, total * 1.0 / k);
+        total -= nums[left];
+        left++;
+    }
+    
+    return average;
 }
