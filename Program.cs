@@ -1,12 +1,44 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var code = new int[] { 5, 7, 1, 4 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var k = 3;
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(string.Join(", ", Decrypt(code, k)));
+
+int[] Decrypt(int[] code, int k)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    var result = new int[code.Length];
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 0; i < code.Length; i++)
+    {
+        switch (k)
+        {
+            case > 0:
+            {
+                var count = 1;
+                while (count <= k)
+                {
+                    result[i] += code[(i + count) % code.Length];
+                    count++;
+                }
+
+                break;
+            }
+            case < 0:
+            {
+                var count = 1;
+                while (count <= Math.Abs(k))
+                {
+                    result[i] += code[(i - count + code.Length) % code.Length];
+                    count++;
+                }
+
+                break;
+            }
+            default:
+                result[i] = 0;
+                break;
+        }
+    }
+    
+    return result;
 }
