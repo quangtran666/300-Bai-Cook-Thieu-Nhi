@@ -1,12 +1,23 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var arr = new int[] { 64, 34, 25, 12, 22, 11, 90 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+BubbleSort(arr);
 
-int[] Intersection(int[] nums1, int[] nums2)
-{
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+Console.Write(string.Join(", ", arr));
+ 
+void BubbleSort(int[] arr)
+ {
+     var swapped = true;
 
-    return hashset1.Intersect(hashset2).ToArray();
-}
+     while (swapped)
+     {
+         swapped = false;
+         for (var i = 0; i < arr.Length - 1; i++)
+         {
+             if (arr[i + 1] < arr[i])
+             {
+                 swapped = true;
+                 (arr[i + 1], arr[i]) = (arr[i], arr[i + 1]);
+             }   
+         }    
+     }
+ }
