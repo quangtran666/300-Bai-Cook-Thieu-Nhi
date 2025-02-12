@@ -1,12 +1,21 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var s = "xyzzaz";
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var result = CountGoodSubstrings(s);
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(result);
+
+int CountGoodSubstrings(string s)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    var result = 0;
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 0; i < s.Length - 2; i++)
+    {
+        var hashset = new HashSet<int>([s[i], s[i + 1], s[i + 2]]);
+        if (hashset.Count == 3)
+        {
+            result++;
+        }
+    }
+    
+    return result;
 }
