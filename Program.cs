@@ -1,12 +1,8 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿Console.WriteLine(Fibonacci(6));
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
-
-int[] Intersection(int[] nums1, int[] nums2)
+int Fibonacci(int n)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
-
-    return hashset1.Intersect(hashset2).ToArray();
+    if (n <= 1) return n;
+    
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
