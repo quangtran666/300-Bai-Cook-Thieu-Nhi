@@ -1,12 +1,23 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var arr = new int[] { 64, 25, 12, 22, 11 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+SelectionSort(arr);
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(string.Join(", ",  arr));
+
+void SelectionSort(int[] arr)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
-
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 0; i < arr.Length; i++)
+    { 
+        var min = arr[i];
+        var minIndex = i;
+        for (var j = i; j < arr.Length; j++)
+        {
+            if (arr[j] < min)
+            {
+                min = arr[j];
+                minIndex = j;
+            }
+        }
+        (arr[i], arr[minIndex]) = (arr[minIndex], arr[i]);
+    }
 }
