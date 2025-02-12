@@ -1,12 +1,20 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var arr = new int[] { 5, 2, 4, 6, 1, 3 };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+IntertionSort(arr);
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(string.Join(", ", arr));
+
+void IntertionSort(int[] arr)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    for (var i = 1; i < arr.Length; i++)
+    {
+        var temp = arr[i];
+        var j = i - 1;
 
-    return hashset1.Intersect(hashset2).ToArray();
+        while (j >= 0 && arr[j] > temp)
+        {
+            (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+            j--;
+        } 
+    }
 }
