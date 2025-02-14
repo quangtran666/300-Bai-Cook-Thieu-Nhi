@@ -1,12 +1,28 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var intervals = new int[][] {
+    [1, 3],
+    [2, 6],
+    [8, 10],
+    [15, 18]
+};
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var result = Merge(intervals);
 
-int[] Intersection(int[] nums1, int[] nums2)
+foreach (var interval in result)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    Console.WriteLine($"[{interval[0]}, {interval[1]}]");
+}
 
-    return hashset1.Intersect(hashset2).ToArray();
+int[][] Merge(int[][] intervals) {
+    Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
+    var result = new List<int[]>();
+
+    foreach (var interval in intervals)
+    {
+        if (result.Count == 0 || interval[0] > result.Last()[1]) 
+            result.Add(interval);
+        else
+            result.Last()[1] = Math.Max(interval[1], result.Last()[1]);
+    }
+    
+    return result.ToArray();
 }
