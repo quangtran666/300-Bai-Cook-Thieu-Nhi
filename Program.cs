@@ -1,12 +1,16 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var intervals = new List<int[]> { new int[] { 0, 1 }, new int[] { 2, 4 }, new int[] { 1, 3 }, new int[] { 5, 6 } };
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+Console.WriteLine(CanAttendMeetings(intervals));
 
-int[] Intersection(int[] nums1, int[] nums2)
+bool CanAttendMeetings(List<int[]> intervals)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    intervals.Sort((a, b) => a[0] - b[0]);
 
-    return hashset1.Intersect(hashset2).ToArray();
+    for (var i = 1; i < intervals.Count; i++)
+    {
+        if (intervals[i][0] < intervals[i - 1][1])
+            return false;
+    }
+    
+    return true;
 }
