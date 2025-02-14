@@ -1,12 +1,28 @@
-﻿int[] nums1 = [1, 2, 2, 1];
-int[] nums2 = [2, 2];
+﻿var intervals = new int[][] {
+    [1, 2],
+    [2, 3],
+    [3, 4],
+    [1, 3]
+};
 
-Console.Write(string.Join(" ", Intersection(nums1, nums2)));
+var result = EraseOverlapIntervals(intervals);
 
-int[] Intersection(int[] nums1, int[] nums2)
+Console.WriteLine(result);
+
+int EraseOverlapIntervals(int[][] intervals)
 {
-    var hashset1 = new HashSet<int>(nums1);
-    var hashset2 = new HashSet<int>(nums2);
+    Array.Sort(intervals, (a, b) => a[1] - b[1]);
+    var count = 1;
+    var end = intervals[0][1];
+    
+    for (var i = 1; i < intervals.Length; i++)
+    {
+        if (intervals[i][0] >= end)
+        {
+            count++;
+            end = intervals[i][1];
+        }
+    }
 
-    return hashset1.Intersect(hashset2).ToArray();
+    return intervals.Length - count;
 }
